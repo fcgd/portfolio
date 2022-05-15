@@ -393,6 +393,7 @@ a .contact__p {
 
 .form {
   flex: 2 0 0px;
+  -webkit-appearance: none;
 }
 form {
   display: flex;
@@ -414,15 +415,15 @@ button
 }
 
 
-input[type="email"], 
-textarea {
+.form__input {
   padding: 10px;
   background-color: var(--primary);
   border-radius: 5px;
 }
 
-input[type="email"]:focus, 
-textarea:focus {
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--tertiary);
 }
 
 
@@ -533,9 +534,7 @@ body::-webkit-scrollbar-thumb {
   .home__h2 {
     font-size: 2rem;
   }
-  .home__btns {
-    /* align-self: center; */
-  }
+
   .memoji {
     width: 300px;
   }
@@ -577,7 +576,8 @@ body::-webkit-scrollbar-thumb {
    /* HOME */
 
    .home {
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 0;
   }
   .home__span {
     font-size: 1.5rem;
@@ -595,10 +595,16 @@ body::-webkit-scrollbar-thumb {
     font-size: 0.8rem;
   }
   .memoji {
+    position: relative;
     width: 300px;
+    align-self: flex-end;
   }
 
   /* ABOUT */
+  .about {
+    margin-top: 50px;
+  }
+
   .about__wrapper {
     flex-direction: column;
     gap: 3rem;
